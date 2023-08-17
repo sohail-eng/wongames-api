@@ -53,9 +53,9 @@ JWT_SECRET = "YOUR_DATABASE_JWT_SECRETE"
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
 
 ```
-npm run develop
+$ npm run develop
 # or
-yarn develop
+$ yarn develop
 ```
 
 ### `start`
@@ -63,9 +63,9 @@ yarn develop
 Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
 
 ```
-npm run start
+$ npm run start
 # or
-yarn start
+$ yarn start
 ```
 
 ### `build`
@@ -73,9 +73,9 @@ yarn start
 Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
 
 ```
-npm run build
+$ npm run build
 # or
-yarn build
+$ yarn build
 ```
 
 ## ⚙️ Deployment
