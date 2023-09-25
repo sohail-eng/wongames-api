@@ -4,9 +4,9 @@
   <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://raw.githubusercontent.com/Pedro-Estevao/boilerplate-nextjs/master/public/img/logo.svg">
 </picture>
 
-# React Avançado - Landing Page API
+# WonGames - Landing Page API
 
-This is the API developed with [Strapi](https://strapi.io) to seed the landing page of the [React Avançado course](https://reactavancado.com.br/).
+This is the API developed with [Strapi](https://strapi.io) to seed the WonGames landing page for the [React Avançado course](https://reactavancado.com.br/).
 
 ## Requirements
 
