@@ -20,8 +20,6 @@ First, run the command to install the dependencies:
 
 ```bash
 $ npm install
-# or
-$ yarn install
 ```
 
 Create an `.env` file in the project root, or edit if it already exists, similar to the following structure:
@@ -48,34 +46,28 @@ JWT_SECRET = "YOUR_DATABASE_JWT_SECRETE"
 
 ## Commands
 
-### `develop`
+### `dev`
 
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
 
-```
-$ npm run develop
-# or
-$ yarn develop
+```bash
+$ npm run dev
 ```
 
 ### `start`
 
 Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
 
-```
+```bash
 $ npm run start
-# or
-$ yarn start
 ```
 
 ### `build`
 
 Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
 
-```
+```bash
 $ npm run build
-# or
-$ yarn build
 ```
 
 ## ⚙️ Deployment
