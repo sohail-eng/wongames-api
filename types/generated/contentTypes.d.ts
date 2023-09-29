@@ -720,11 +720,11 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     displayName: 'category';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
-    slug: Attribute.UID<'api::category.category', 'name'> & Attribute.Required;
+    slug: Attribute.UID<'api::category.category', 'name'>;
     games: Attribute.Relation<
       'api::category.category',
       'manyToMany',
@@ -732,7 +732,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::category.category',
       'oneToOne',
@@ -796,8 +795,16 @@ export interface ApiGameGame extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    slug: Attribute.UID<'api::game.game', 'name'> & Attribute.Required;
+    slug: Attribute.UID<'api::game.game', 'name'>;
     short_description: Attribute.Text;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
     price: Attribute.Decimal & Attribute.Required;
     release_date: Attribute.Date;
     rating: Attribute.Enumeration<
@@ -825,14 +832,6 @@ export interface ApiGameGame extends Schema.CollectionType {
       'manyToOne',
       'api::publisher.publisher'
     >;
-    description: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
-        {
-          output: 'HTML';
-          preset: 'rich';
-        }
-      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::game.game', 'oneToOne', 'admin::user'> &
@@ -900,8 +899,8 @@ export interface ApiPlatformPlatform extends Schema.CollectionType {
     draftAndPublish: false;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    slug: Attribute.UID<'api::platform.platform', 'name'> & Attribute.Required;
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    slug: Attribute.UID<'api::platform.platform', 'name'>;
     games: Attribute.Relation<
       'api::platform.platform',
       'manyToMany',
@@ -936,8 +935,7 @@ export interface ApiPublisherPublisher extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    slug: Attribute.UID<'api::publisher.publisher', 'name'> &
-      Attribute.Required;
+    slug: Attribute.UID<'api::publisher.publisher', 'name'>;
     games: Attribute.Relation<
       'api::publisher.publisher',
       'oneToMany',

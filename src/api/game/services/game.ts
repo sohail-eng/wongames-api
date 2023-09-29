@@ -5,7 +5,7 @@
 import axios from 'axios';
 import { JSDOM } from 'jsdom';
 import slugify from 'slugify';
-import qs from "querystring";
+import qs from 'querystring';
 import { factories } from '@strapi/strapi';
 
 const gameService = "api::game.game";
@@ -106,14 +106,14 @@ async function createManyToManyData(products) {
         });
     });
 
-    const createCall = (set, EntityService) => Array.from(set).map((name) => create(name, EntityService));
+    const createCall = (set, entityName) => Array.from(set).map((name) => create(name, entityName));
 
-    return Promise.all({
+    return Promise.all([
         ...createCall(developersSet, developerService),
         ...createCall(publishersSet, publisherService),
         ...createCall(categoriesSet, categoryService),
         ...createCall(platformsSet, platformService),
-    });
+	]);
 }
 
 async function setImage({ image, game, field = "cover" }) {
@@ -178,11 +178,11 @@ async function createGames(products) {
 
                 await setImage({ image: product.coverHorizontal, game });
                 await Promise.all(
-                    product.screenshots.slice(0, 8).map((url) => 
+                    product.screenshots.slice(0, 5).map((url) => 
                         setImage({
                             image: `${url.replace(
                                 "{formatter}",
-                                "profuct_card_v2_mobile_slider_639"
+                                "product_card_v2_mobile_slider_639"
                             )}`,
                             game,
                             field: "gallery",
@@ -200,8 +200,8 @@ export default factories.createCoreService(gameService, () => ({
     async populate(params) {
         try {
             const gogApiUrl = `https://catalog.gog.com/v1/catalog?${qs.stringify(params)}`;
-    
-            const {
+			
+			const {
                 data: { products },
             } = await axios.get(gogApiUrl);
     

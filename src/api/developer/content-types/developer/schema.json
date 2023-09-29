@@ -17,8 +17,7 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "name",
-      "required": false
+      "targetField": "name"
     },
     "games": {
       "type": "relation",

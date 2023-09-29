@@ -18,11 +18,18 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "name",
-      "required": true
+      "targetField": "name"
     },
     "short_description": {
       "type": "text"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     },
     "price": {
       "type": "decimal",
@@ -84,14 +91,6 @@
       "relation": "manyToOne",
       "target": "api::publisher.publisher",
       "inversedBy": "games"
-    },
-    "description": {
-      "type": "customField",
-      "options": {
-        "output": "HTML",
-        "preset": "rich"
-      },
-      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }
