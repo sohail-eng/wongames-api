@@ -124,17 +124,22 @@ async function setImage({ image, game, field = "cover" }) {
 
     const formData: any = new FormData();
 
+    const generateRandomId = () => {
+        const id = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        return id;
+    }
+
     formData.append("refId", game.id);
     formData.append("ref", `${gameService}`);
     formData.append("field", field);
-    formData.append("files", buffer, { filename: `${game.slug}.jpg` });
+    formData.append("files", buffer, { filename: `${game.slug}_${generateRandomId()}.jpg` });
 
-    console.info(`Uploading ${field} image: ${game.slug}.jpg`);
+    console.info(`Uploading ${field} image: ${game.slug}_${generateRandomId()}.jpg`);
 
     try {
         await axios({
             method: "POST",
-            url: `http://localhost:1337/api/upload/`,
+            url: `http://127.0.0.1:1338/api/upload/`,
             data: formData,
             headers: {
                 "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
