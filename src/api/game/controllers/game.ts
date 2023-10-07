@@ -10,7 +10,7 @@ export default factories.createCoreController(
         async populate(ctx) {
             const options = {
                 limit: 48,
-                order: "desc:3Atrending",
+                order: "desc:trending",
                 ...ctx.query,
             };
 
