@@ -185,7 +185,7 @@ async function createGames(products) {
                 await Promise.all(
                     product.screenshots.slice(0, 5).map((url) => 
                         setImage({
-                            image: `${url.replace("{formatter}", "product_card_v2_mobile_slider_639").replace("\/", "/")}`,
+                            image: `${url.replace("{formatter}", "product_card_v2_mobile_slider_639")}`,
                             game,
                             field: "gallery",
                         })
