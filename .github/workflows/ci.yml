@@ -8,17 +8,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8.x
-
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Build
-        run: pnpm run build
+        run: npm run build
