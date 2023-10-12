@@ -249,7 +249,7 @@ export interface PageTechIcons extends Schema.Component {
   };
 }
 
-declare module '@strapi/strapi' {
+declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'page.button': PageButton;
