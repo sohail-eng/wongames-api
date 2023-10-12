@@ -2,6 +2,13 @@ name: ci
 on: [pull_request]
 
 jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.x
+
   build:
     runs-on: ubuntu-latest
     steps:
