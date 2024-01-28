@@ -170,9 +170,12 @@ export interface PageSectionFaq extends Schema.Component {
     title: Attribute.String & Attribute.Required;
     questions: Attribute.Component<'page.questions', true> &
       Attribute.Required &
-      Attribute.SetMinMax<{
-        min: 2;
-      }>;
+      Attribute.SetMinMax<
+        {
+          min: 2;
+        },
+        number
+      >;
   };
 }
 
@@ -186,9 +189,12 @@ export interface PageSectionModules extends Schema.Component {
     title: Attribute.String & Attribute.Required;
     modules: Attribute.Component<'page.modules', true> &
       Attribute.Required &
-      Attribute.SetMinMax<{
-        min: 2;
-      }>;
+      Attribute.SetMinMax<
+        {
+          min: 2;
+        },
+        number
+      >;
   };
 }
 
@@ -202,9 +208,12 @@ export interface PageSectionReviews extends Schema.Component {
     title: Attribute.String & Attribute.Required;
     reviews: Attribute.Component<'page.reviews', true> &
       Attribute.Required &
-      Attribute.SetMinMax<{
-        min: 4;
-      }>;
+      Attribute.SetMinMax<
+        {
+          min: 4;
+        },
+        number
+      >;
   };
 }
 
