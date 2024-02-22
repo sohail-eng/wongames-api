@@ -14,7 +14,7 @@
     "@apollo/client": "^3.9.5",
     "@ckeditor/strapi-plugin-ckeditor": "^0.0.10",
     "@strapi/plugin-graphql": "^4.20.2",
-    "@strapi/plugin-i18n": "4.20.1",
+    "@strapi/plugin-i18n": "4.20.2",
     "@strapi/plugin-users-permissions": "4.20.2",
     "@strapi/strapi": "4.20.2",
     "graphql": "^16.8.1",
