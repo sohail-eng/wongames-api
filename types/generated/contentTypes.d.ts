@@ -783,55 +783,20 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiAuthorAuthor extends Schema.CollectionType {
-  collectionName: 'authors';
-  info: {
-    singularName: 'author';
-    pluralName: 'authors';
-    displayName: 'author';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    photo: Attribute.Media & Attribute.Required;
-    name: Attribute.String & Attribute.Required;
-    role: Attribute.String & Attribute.Required;
-    socialLinks: Attribute.Component<'page.social-links', true> &
-      Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::author.author',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::author.author',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
     singularName: 'category';
     pluralName: 'categories';
-    displayName: 'category';
+    displayName: 'Category';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
-    slug: Attribute.UID<'api::category.category', 'name'>;
+    slug: Attribute.UID<'api::category.category', 'name'> & Attribute.Required;
     games: Attribute.Relation<
       'api::category.category',
       'manyToMany',
@@ -859,14 +824,16 @@ export interface ApiDeveloperDeveloper extends Schema.CollectionType {
   info: {
     singularName: 'developer';
     pluralName: 'developers';
-    displayName: 'developer';
+    displayName: 'Developer';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    slug: Attribute.UID<'api::developer.developer', 'name'>;
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    slug: Attribute.UID<'api::developer.developer', 'name'> &
+      Attribute.Required;
     games: Attribute.Relation<
       'api::developer.developer',
       'manyToMany',
@@ -894,15 +861,15 @@ export interface ApiGameGame extends Schema.CollectionType {
   info: {
     singularName: 'game';
     pluralName: 'games';
-    displayName: 'game';
+    displayName: 'Game';
     description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    slug: Attribute.UID<'api::game.game', 'name'>;
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    slug: Attribute.UID<'api::game.game', 'name'> & Attribute.Required;
     short_description: Attribute.Text;
     description: Attribute.RichText &
       Attribute.CustomField<
@@ -912,7 +879,7 @@ export interface ApiGameGame extends Schema.CollectionType {
           preset: 'rich';
         }
       >;
-    price: Attribute.Decimal & Attribute.Required;
+    price: Attribute.Decimal & Attribute.Required & Attribute.DefaultTo<0>;
     release_date: Attribute.Date;
     rating: Attribute.Enumeration<
       ['BR0', 'BR10', 'BR12', 'BR14', 'BR16', 'BR18']
@@ -948,66 +915,20 @@ export interface ApiGameGame extends Schema.CollectionType {
   };
 }
 
-export interface ApiLandingPageLandingPage extends Schema.SingleType {
-  collectionName: 'landing_pages';
-  info: {
-    singularName: 'landing-page';
-    pluralName: 'landing-pages';
-    displayName: 'landingPage';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    logo: Attribute.Media & Attribute.Required;
-    header: Attribute.Component<'page.header'> & Attribute.Required;
-    sectionAboutProject: Attribute.Component<'page.section-about-project'> &
-      Attribute.Required;
-    sectionTech: Attribute.Component<'page.section-tech'> & Attribute.Required;
-    sectionConcepts: Attribute.Component<'page.section-concepts'> &
-      Attribute.Required;
-    sectionModules: Attribute.Component<'page.section-modules'> &
-      Attribute.Required;
-    sectionAgenda: Attribute.Component<'page.section-agenda'> &
-      Attribute.Required;
-    pricingBox: Attribute.Component<'page.pricing-box'> & Attribute.Required;
-    sectionAboutUs: Attribute.Component<'page.section-about-us'> &
-      Attribute.Required;
-    sectionReviews: Attribute.Component<'page.section-reviews'> &
-      Attribute.Required;
-    sectionFaq: Attribute.Component<'page.section-faq'> & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::landing-page.landing-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::landing-page.landing-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiPlatformPlatform extends Schema.CollectionType {
   collectionName: 'platforms';
   info: {
     singularName: 'platform';
     pluralName: 'platforms';
-    displayName: 'platform';
+    displayName: 'Platform';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
-    slug: Attribute.UID<'api::platform.platform', 'name'>;
+    slug: Attribute.UID<'api::platform.platform', 'name'> & Attribute.Required;
     games: Attribute.Relation<
       'api::platform.platform',
       'manyToMany',
@@ -1035,14 +956,15 @@ export interface ApiPublisherPublisher extends Schema.CollectionType {
   info: {
     singularName: 'publisher';
     pluralName: 'publishers';
-    displayName: 'publisher';
+    displayName: 'Publisher';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    slug: Attribute.UID<'api::publisher.publisher', 'name'>;
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    slug: Attribute.UID<'api::publisher.publisher', 'name'> &
+      Attribute.Required;
     games: Attribute.Relation<
       'api::publisher.publisher',
       'oneToMany',
@@ -1083,11 +1005,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::developer.developer': ApiDeveloperDeveloper;
       'api::game.game': ApiGameGame;
-      'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::platform.platform': ApiPlatformPlatform;
       'api::publisher.publisher': ApiPublisherPublisher;
     }

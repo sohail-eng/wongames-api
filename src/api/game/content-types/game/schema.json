@@ -4,7 +4,7 @@
   "info": {
     "singularName": "game",
     "pluralName": "games",
-    "displayName": "game",
+    "displayName": "Game",
     "description": ""
   },
   "options": {
@@ -14,11 +14,13 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "slug": {
       "type": "uid",
-      "targetField": "name"
+      "targetField": "name",
+      "required": true
     },
     "short_description": {
       "type": "text"
@@ -33,6 +35,7 @@
     },
     "price": {
       "type": "decimal",
+      "default": 0,
       "required": true
     },
     "release_date": {
