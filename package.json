@@ -15,7 +15,7 @@
     "@strapi/plugin-cloud": "4.20.3",
     "@strapi/plugin-graphql": "^4.20.2",
     "@strapi/plugin-i18n": "4.20.3",
-    "@strapi/plugin-users-permissions": "4.20.2",
+    "@strapi/plugin-users-permissions": "4.20.3",
     "@strapi/strapi": "4.20.3",
     "mysql": "2.18.1",
     "patch-package": "^8.0.0",
