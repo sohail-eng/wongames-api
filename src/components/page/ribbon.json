@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_page_ribbons",
+  "info": {
+    "displayName": "Ribbon",
+    "icon": "stack"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string",
+      "required": false,
+      "maxLength": 30
+    },
+    "Color": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary"
+      ],
+      "default": "primary"
+    },
+    "Size": {
+      "type": "enumeration",
+      "enum": [
+        "small",
+        "normal"
+      ],
+      "default": "normal"
+    }
+  }
+}

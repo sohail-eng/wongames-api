@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_page_buttons",
+  "info": {
+    "displayName": "Button",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string",
+      "required": true,
+      "default": "Buy now"
+    },
+    "Link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
