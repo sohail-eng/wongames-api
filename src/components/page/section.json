@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_page_sections",
+  "info": {
+    "displayName": "Section",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Highlight": {
+      "displayName": "Highlight",
+      "type": "component",
+      "repeatable": false,
+      "component": "page.highlight"
+    }
+  }
+}

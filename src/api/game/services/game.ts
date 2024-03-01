@@ -139,7 +139,7 @@ async function setImage({ image, game, field = "cover" }) {
     try {
         await axios({
             method: "POST",
-            url: `http://127.0.0.1:1338/api/upload/`,
+            url: `http://127.0.0.1:1337/api/upload/`,
             data: formData,
             headers: {
                 "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,

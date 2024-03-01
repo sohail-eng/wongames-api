@@ -953,6 +953,31 @@ export interface ApiGameGame extends Schema.CollectionType {
   };
 }
 
+export interface ApiHomeHome extends Schema.SingleType {
+  collectionName: 'homes';
+  info: {
+    singularName: 'home';
+    pluralName: 'homes';
+    displayName: 'Home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    NewGames: Attribute.Component<'page.section'>;
+    UpcomingGames: Attribute.Component<'page.section'>;
+    FreeGames: Attribute.Component<'page.section'>;
+    PopularGames: Attribute.Component<'page.popular-games'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPlatformPlatform extends Schema.CollectionType {
   collectionName: 'platforms';
   info: {
@@ -1047,6 +1072,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::developer.developer': ApiDeveloperDeveloper;
       'api::game.game': ApiGameGame;
+      'api::home.home': ApiHomeHome;
       'api::platform.platform': ApiPlatformPlatform;
       'api::publisher.publisher': ApiPublisherPublisher;
     }
