@@ -4,30 +4,31 @@
   "info": {
     "singularName": "home",
     "pluralName": "homes",
-    "displayName": "Home"
+    "displayName": "Home",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "NewGames": {
+    "newGames": {
       "displayName": "Section",
       "type": "component",
       "repeatable": false,
       "component": "page.section"
     },
-    "UpcomingGames": {
+    "upcomingGames": {
       "type": "component",
       "repeatable": false,
       "component": "page.section"
     },
-    "FreeGames": {
+    "freeGames": {
       "type": "component",
       "repeatable": false,
       "component": "page.section"
     },
-    "PopularGames": {
+    "popularGames": {
       "displayName": "PopularGames",
       "type": "component",
       "repeatable": false,

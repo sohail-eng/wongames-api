@@ -26,7 +26,9 @@ async function getGameInfo(slug) {
     try {
         const gogSlug = slug.replaceAll("-", "_").toLowerCase();
 
-        const body = await axios.get(`https://www.gog.com/game/${gogSlug}`);
+        const gogGamePage = `${process.env.GOG_URL}/game/`;
+
+        const body = await axios.get(`${gogGamePage}${gogSlug}`);
         const dom = new JSDOM(body.data);
 
         const raw_description = dom.window.document.querySelector(".description");
@@ -139,7 +141,7 @@ async function setImage({ image, game, field = "cover" }) {
     try {
         await axios({
             method: "POST",
-            url: `http://127.0.0.1:1337/api/upload/`,
+            url: `${process.env.APP_URL}/api/upload/`,
             data: formData,
             headers: {
                 "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
@@ -201,7 +203,8 @@ async function createGames(products) {
 export default factories.createCoreService(gameService, () => ({
     async populate(params) {
         try {
-            const gogApiUrl = `https://catalog.gog.com/v1/catalog?${qs.stringify(params)}`;
+            const gogApiUrl = `${process.env.GOG_API_URL}?${qs.stringify(params)}`;
+            // const gogApiUrl = `${process.env.GOG_API_URL}?limit=48&query=Cyberpunk+2077+Utimate+Edition&order=desc}`;
 			
 			const {
                 data: { products },

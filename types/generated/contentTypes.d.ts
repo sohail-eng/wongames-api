@@ -789,20 +789,21 @@ export interface ApiBannerBanner extends Schema.CollectionType {
     singularName: 'banner';
     pluralName: 'banners';
     displayName: 'Banner';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Image: Attribute.Media & Attribute.Required;
-    Title: Attribute.String & Attribute.Required;
-    SubTitle: Attribute.Text &
+    image: Attribute.Media & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    subTitle: Attribute.Text &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 150;
       }>;
-    Button: Attribute.Component<'page.button'>;
-    Ribbon: Attribute.Component<'page.ribbon'>;
+    button: Attribute.Component<'page.button'>;
+    ribbon: Attribute.Component<'page.ribbon'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -959,15 +960,16 @@ export interface ApiHomeHome extends Schema.SingleType {
     singularName: 'home';
     pluralName: 'homes';
     displayName: 'Home';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    NewGames: Attribute.Component<'page.section'>;
-    UpcomingGames: Attribute.Component<'page.section'>;
-    FreeGames: Attribute.Component<'page.section'>;
-    PopularGames: Attribute.Component<'page.popular-games'>;
+    newGames: Attribute.Component<'page.section'>;
+    upcomingGames: Attribute.Component<'page.section'>;
+    freeGames: Attribute.Component<'page.section'>;
+    popularGames: Attribute.Component<'page.popular-games'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1050,6 +1052,37 @@ export interface ApiPublisherPublisher extends Schema.CollectionType {
   };
 }
 
+export interface ApiRecommendedRecommended extends Schema.SingleType {
+  collectionName: 'recommendeds';
+  info: {
+    singularName: 'recommended';
+    pluralName: 'recommendeds';
+    displayName: 'Recommended';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    section: Attribute.Component<'page.popular-games'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::recommended.recommended',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::recommended.recommended',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1075,6 +1108,7 @@ declare module '@strapi/types' {
       'api::home.home': ApiHomeHome;
       'api::platform.platform': ApiPlatformPlatform;
       'api::publisher.publisher': ApiPublisherPublisher;
+      'api::recommended.recommended': ApiRecommendedRecommended;
     }
   }
 }

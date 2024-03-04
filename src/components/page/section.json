@@ -2,14 +2,15 @@
   "collectionName": "components_page_sections",
   "info": {
     "displayName": "Section",
-    "icon": "apps"
+    "icon": "apps",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Highlight": {
+    "highlight": {
       "displayName": "Highlight",
       "type": "component",
       "repeatable": false,

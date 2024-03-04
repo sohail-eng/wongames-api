@@ -2,16 +2,17 @@
   "collectionName": "components_page_ribbons",
   "info": {
     "displayName": "Ribbon",
-    "icon": "stack"
+    "icon": "stack",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Text": {
+    "text": {
       "type": "string",
       "required": false,
       "maxLength": 30
     },
-    "Color": {
+    "color": {
       "type": "enumeration",
       "enum": [
         "primary",
@@ -19,7 +20,7 @@
       ],
       "default": "primary"
     },
-    "Size": {
+    "size": {
       "type": "enumeration",
       "enum": [
         "small",

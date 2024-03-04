@@ -2,16 +2,17 @@
   "collectionName": "components_page_buttons",
   "info": {
     "displayName": "Button",
-    "icon": "link"
+    "icon": "link",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Label": {
+    "label": {
       "type": "string",
       "required": true,
       "default": "Buy now"
     },
-    "Link": {
+    "link": {
       "type": "string",
       "required": true
     }

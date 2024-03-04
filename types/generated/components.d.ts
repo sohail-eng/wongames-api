@@ -5,12 +5,13 @@ export interface PageButton extends Schema.Component {
   info: {
     displayName: 'Button';
     icon: 'link';
+    description: '';
   };
   attributes: {
-    Label: Attribute.String &
+    label: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'Buy now'>;
-    Link: Attribute.String & Attribute.Required;
+    link: Attribute.String & Attribute.Required;
   };
 }
 
@@ -19,15 +20,16 @@ export interface PageHighlight extends Schema.Component {
   info: {
     displayName: 'Highlight';
     icon: 'star';
+    description: '';
   };
   attributes: {
-    Title: Attribute.String & Attribute.Required;
-    SubTitle: Attribute.Text & Attribute.Required;
-    Background: Attribute.Media & Attribute.Required;
-    FloatImage: Attribute.Media;
-    ButtonLabel: Attribute.String & Attribute.Required;
-    ButtonLink: Attribute.String & Attribute.Required;
-    Alignment: Attribute.Enumeration<['right', 'left']> &
+    title: Attribute.String & Attribute.Required;
+    subTitle: Attribute.Text & Attribute.Required;
+    background: Attribute.Media & Attribute.Required;
+    floatImage: Attribute.Media;
+    buttonLabel: Attribute.String & Attribute.Required;
+    buttonLink: Attribute.String & Attribute.Required;
+    alignment: Attribute.Enumeration<['right', 'left']> &
       Attribute.DefaultTo<'right'>;
   };
 }
@@ -37,10 +39,11 @@ export interface PagePopularGames extends Schema.Component {
   info: {
     displayName: 'PopularGames';
     icon: 'crown';
+    description: '';
   };
   attributes: {
-    Title: Attribute.String & Attribute.Required;
-    Highlight: Attribute.Component<'page.highlight', true>;
+    title: Attribute.String & Attribute.Required;
+    highlight: Attribute.Component<'page.highlight'>;
     games: Attribute.Relation<
       'page.popular-games',
       'oneToMany',
@@ -54,15 +57,16 @@ export interface PageRibbon extends Schema.Component {
   info: {
     displayName: 'Ribbon';
     icon: 'stack';
+    description: '';
   };
   attributes: {
-    Text: Attribute.String &
+    text: Attribute.String &
       Attribute.SetMinMaxLength<{
         maxLength: 30;
       }>;
-    Color: Attribute.Enumeration<['primary', 'secondary']> &
+    color: Attribute.Enumeration<['primary', 'secondary']> &
       Attribute.DefaultTo<'primary'>;
-    Size: Attribute.Enumeration<['small', 'normal']> &
+    size: Attribute.Enumeration<['small', 'normal']> &
       Attribute.DefaultTo<'normal'>;
   };
 }
@@ -72,10 +76,11 @@ export interface PageSection extends Schema.Component {
   info: {
     displayName: 'Section';
     icon: 'apps';
+    description: '';
   };
   attributes: {
-    Title: Attribute.String;
-    Highlight: Attribute.Component<'page.highlight'>;
+    title: Attribute.String;
+    highlight: Attribute.Component<'page.highlight'>;
   };
 }
 

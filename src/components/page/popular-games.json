@@ -2,17 +2,18 @@
   "collectionName": "components_page_popular_games",
   "info": {
     "displayName": "PopularGames",
-    "icon": "crown"
+    "icon": "crown",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "Highlight": {
+    "highlight": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "page.highlight"
     },
     "games": {
