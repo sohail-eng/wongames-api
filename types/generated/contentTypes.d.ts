@@ -1066,13 +1066,12 @@ export interface ApiRecommendedRecommended extends Schema.SingleType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     section: Attribute.Component<'page.popular-games'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::recommended.recommended',
       'oneToOne',
