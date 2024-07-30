@@ -800,7 +800,7 @@ export interface ApiBannerBanner extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    image: Attribute.Media & Attribute.Required;
+    image: Attribute.Media<'images'> & Attribute.Required;
     title: Attribute.String & Attribute.Required;
     subTitle: Attribute.Text &
       Attribute.Required &
@@ -928,8 +928,8 @@ export interface ApiGameGame extends Schema.CollectionType {
     rating: Attribute.Enumeration<
       ['BR0', 'BR10', 'BR12', 'BR14', 'BR16', 'BR18']
     >;
-    cover: Attribute.Media;
-    gallery: Attribute.Media;
+    cover: Attribute.Media<'images'>;
+    gallery: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     categories: Attribute.Relation<
       'api::game.game',
       'manyToMany',
