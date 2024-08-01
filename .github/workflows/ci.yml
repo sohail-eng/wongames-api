@@ -18,3 +18,8 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Bumb version and push tag
+        run: |
+          npm version patch
+          git push --follow-tags
