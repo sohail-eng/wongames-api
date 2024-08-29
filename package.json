@@ -18,7 +18,7 @@
     "@strapi/plugin-users-permissions": "^4.25.8",
     "@strapi/strapi": "^4.25.8",
     "@types/jsdom": "^21.1.7",
-    "jsdom": "^24.1.0",
+    "jsdom": "^25.0.0",
     "mysql": "^2.18.1",
     "patch-package": "^8.0.0",
     "react": "^18.3.1",
