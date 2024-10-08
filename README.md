@@ -1,75 +1,61 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pedro-Estevao/boilerplate-nextjs/master/public/img/logo.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Pedro-Estevao/boilerplate-nextjs/master/public/img/logo-gh.svg">
-  <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://raw.githubusercontent.com/Pedro-Estevao/boilerplate-nextjs/master/public/img/logo.svg">
-</picture>
+# 🚀 Getting started with Strapi
 
-# WonGames - Landing Page API
+Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
 
-This is the API developed with [Strapi](https://strapi.io) to seed the WonGames landing page for the [React Avançado course](https://reactavancado.com.br/).
-
-## Requirements
-
-This project uses the [MySQL](https://www.mysql.com) database, so to make it work, you need to have it installed on your local machine, or if you prefer, use Docker.
-
-The configuration for the Database can be found in the directory [config/database.js](config/database.js)
-
-## Getting Started
-
-First, run the command to install the dependencies:
-
-```bash
-$ npm install
-```
-
-Create an `.env` file in the project root, or edit if it already exists, similar to the following structure:
-
-```bash
-HOST = 0.0.0.0 #Host where strapi will start
-PORT = 1337 #Port where strapi will start 
-APP_KEYS = "toBeModified1,toBeModified2"
-API_TOKEN_SALT = tobemodified
-ADMIN_JWT_SECRET = tobemodified
-TRANSFER_TOKEN_SALT = tobemodified
-JWT_SECRET = tobemodified
-
-# Database
-DATABASE_CLIENT = "YOUR_DATABASE_NAME" #Your database name: mysql, postgresql, mariadb (Check the supported databases in the strapi documentation)
-DATABASE_HOST = "YOUR_DATABASE_HOST" 
-DATABASE_PORT = "YOUR_DATABASE_PORT"
-DATABASE_NAME = "YOUR_DATABASE_NAME"
-DATABASE_USERNAME = "YOUR_DATABASE_USER"
-DATABASE_PASSWORD = "YOUR_DATABASE_PASS"
-DATABASE_SSL = "YOUR_DATABASE_SSL"
-JWT_SECRET = "YOUR_DATABASE_JWT_SECRETE"
-```
-
-## Commands
-
-### `dev`
+### `develop`
 
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
 
-```bash
-$ npm run dev
+```
+npm run develop
+# or
+yarn develop
 ```
 
 ### `start`
 
 Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
 
-```bash
-$ npm run start
+```
+npm run start
+# or
+yarn start
 ```
 
 ### `build`
 
 Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
 
-```bash
-$ npm run build
+```
+npm run build
+# or
+yarn build
 ```
 
 ## ⚙️ Deployment
 
 Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+
+```
+yarn strapi deploy
+```
+
+## 📚 Learn more
+
+- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
+- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
+- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
+- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
+- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+
+Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+
+## ✨ Community
+
+- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
+- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
+- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+
+---
+
+<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
