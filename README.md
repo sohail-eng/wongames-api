@@ -19,7 +19,7 @@ The configuration for the Database can be found in the directory [config/databas
 First, run the command to install the dependencies:
 
 ```bash
-$ bun install
+$ npm install
 ```
 
 Create an `.env` file in the project root, or edit if it already exists, similar to the following structure:
