@@ -203,9 +203,7 @@ async function createGames(products) {
 export default factories.createCoreService(gameService, () => ({
     async populate(params) {
         try {
-            // const gogApiUrl = `${process.env.GOG_API_URL}?${qs.stringify(params)}`;
-            // const gogApiUrl = `${process.env.GOG_API_URL}?limit=50&releaseStatuses=in%3Aupcoming&order=desc%3Atrending&productType=in%3Agame%2Cpack%2Cdlc%2Cextras`;
-            const gogApiUrl = `${process.env.GOG_API_URL}?limit=8&query=like%3AHorizon&order=desc%3Ascore&productType=in%3Agame%2Cpack%2Cdlc%2Cextras`;
+            const gogApiUrl = `${process.env.GOG_API_URL}?${qs.stringify(params)}`;
 			
 			const {
                 data: { products },
