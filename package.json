@@ -15,7 +15,7 @@
     "@strapi/plugin-cloud": "^5.0.2",
     "@strapi/plugin-graphql": "^5.0.2",
     "@strapi/plugin-i18n": "^4.25.12",
-    "@strapi/plugin-users-permissions": "^5.0.2",
+    "@strapi/plugin-users-permissions": "^5.0.3",
     "@strapi/strapi": "^4.25.13",
     "@types/jsdom": "^21.1.7",
     "jsdom": "^25.0.1",
