@@ -73,7 +73,7 @@ async function create(name, entityService) {
             await strapi.service(entityService).create({
                 data: {
                     name,
-                    slug: slugify(name, { strict: true, lower: true}),
+                    slug: slugify(name, { strict: true, lower: true }),
                 },
             });
         }
@@ -115,13 +115,13 @@ async function createManyToManyData(products) {
         ...createCall(publishersSet, publisherService),
         ...createCall(categoriesSet, categoryService),
         ...createCall(platformsSet, platformService),
-	]);
+    ]);
 }
 
 async function setImage({ image, game, field = "cover" }) {
     const { data } = await axios.get(image, { responseType: "arraybuffer" });
     const buffer = Buffer.from(data, "base64");
-    
+
     const FormData = require("form-data");
 
     const formData: any = new FormData();
@@ -185,7 +185,7 @@ async function createGames(products) {
 
                 await setImage({ image: product.coverHorizontal, game });
                 await Promise.all(
-                    product.screenshots.slice(0, 5).map((url) => 
+                    product.screenshots.slice(0, 5).map((url) =>
                         setImage({
                             image: `${url.replace("{formatter}", "product_card_v2_mobile_slider_639")}`,
                             game,
@@ -203,8 +203,9 @@ async function createGames(products) {
 export default factories.createCoreService(gameService, () => ({
     async populate(params) {
         try {
-            const gogApiUrl = `${process.env.GOG_API_URL}?${qs.stringify(params)}`;
-            // const gogApiUrl = `${process.env.GOG_API_URL}?limit=48&query=Cyberpunk+2077+Utimate+Edition&order=desc}`;
+            // const gogApiUrl = `${process.env.GOG_API_URL}?${qs.stringify(params)}`;
+            // const gogApiUrl = `${process.env.GOG_API_URL}?limit=50&releaseStatuses=in%3Aupcoming&order=desc%3Atrending&productType=in%3Agame%2Cpack%2Cdlc%2Cextras`;
+            const gogApiUrl = `${process.env.GOG_API_URL}?limit=8&query=like%3AHorizon&order=desc%3Ascore&productType=in%3Agame%2Cpack%2Cdlc%2Cextras`;
 			
 			const {
                 data: { products },

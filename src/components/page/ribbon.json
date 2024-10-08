@@ -2,14 +2,12 @@
   "collectionName": "components_page_ribbons",
   "info": {
     "displayName": "Ribbon",
-    "icon": "stack",
-    "description": ""
+    "icon": "stack"
   },
   "options": {},
   "attributes": {
     "text": {
       "type": "string",
-      "required": false,
       "maxLength": 30
     },
     "color": {

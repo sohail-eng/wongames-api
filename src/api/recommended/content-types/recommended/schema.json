@@ -15,7 +15,7 @@
     "section": {
       "type": "component",
       "repeatable": false,
-      "component": "page.popular-games",
+      "component": "page.section",
       "required": true
     }
   }

@@ -4,8 +4,7 @@
   "info": {
     "singularName": "platform",
     "pluralName": "platforms",
-    "displayName": "Platform",
-    "description": ""
+    "displayName": "Platform"
   },
   "options": {
     "draftAndPublish": false
@@ -26,7 +25,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::game.game",
-      "mappedBy": "platforms"
+      "inversedBy": "platforms"
     }
   }
 }
