@@ -139,12 +139,9 @@ async function setImage({ image, game, field = "cover" }) {
     console.info(`Uploading ${field} image: ${game.slug}_${generateRandomId()}.jpg`);
 
     try {
-        const host = strapi.config.get("server.host") || process.env.MY_HEROKU_URL || process.env.APP_URL;
-        const apiUrl = `${host}/api/upload`;
-
         await axios({
             method: "POST",
-            url: apiUrl,
+            url: `${process.env.APP_URL}/api/upload/`,
             data: formData,
             headers: {
                 "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
@@ -206,8 +203,7 @@ async function createGames(products) {
 export default factories.createCoreService(gameService, () => ({
     async populate(params) {
         try {
-            // const gogApiUrl = `${process.env.GOG_API_URL}?${qs.stringify(params)}`;
-            const gogApiUrl = `${process.env.GOG_API_URL}?limit=5&query=Cyberpunk+2077+Utimate+Edition&order=desc`;
+            const gogApiUrl = `${process.env.GOG_API_URL}?${qs.stringify(params)}`;
 
             const {
                 data: { products },
