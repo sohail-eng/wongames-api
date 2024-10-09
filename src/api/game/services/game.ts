@@ -204,11 +204,12 @@ export default factories.createCoreService(gameService, () => ({
     async populate(params) {
         try {
             const gogApiUrl = `${process.env.GOG_API_URL}?${qs.stringify(params)}`;
-			
-			const {
+            // const gogApiUrl = `${process.env.GOG_API_URL}?limit=48&query=Cyberpunk+2077+Utimate+Edition&order=desc}`;
+
+            const {
                 data: { products },
             } = await axios.get(gogApiUrl);
-    
+
             await createManyToManyData(products);
             await createGames(products);
 

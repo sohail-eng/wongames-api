@@ -491,7 +491,6 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
     singularName: 'banner';
     pluralName: 'banners';
     displayName: 'Banner';
-    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -588,7 +587,6 @@ export interface ApiGameGame extends Struct.CollectionTypeSchema {
     singularName: 'game';
     pluralName: 'games';
     displayName: 'Game';
-    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -599,26 +597,25 @@ export interface ApiGameGame extends Struct.CollectionTypeSchema {
       Schema.Attribute.Unique;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     short_description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
     price: Schema.Attribute.Decimal &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<0>;
     release_date: Schema.Attribute.Date;
     rating: Schema.Attribute.Enumeration<
       ['BR0', 'BR10', 'BR12', 'BR14', 'BR16', 'BR18']
-    > &
-      Schema.Attribute.DefaultTo<'BR0'>;
+    >;
     cover: Schema.Attribute.Media<'images'>;
     gallery: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
-    >;
-    platforms: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::platform.platform'
-    >;
-    publisher: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::publisher.publisher'
     >;
     categories: Schema.Attribute.Relation<
       'manyToMany',
@@ -628,14 +625,14 @@ export interface ApiGameGame extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::developer.developer'
     >;
-    description: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
-        {
-          output: 'HTML';
-          preset: 'rich';
-        }
-      >;
+    platforms: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::platform.platform'
+    >;
+    publisher: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::publisher.publisher'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -654,7 +651,6 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     singularName: 'home';
     pluralName: 'homes';
     displayName: 'Home';
-    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -682,6 +678,7 @@ export interface ApiPlatformPlatform extends Struct.CollectionTypeSchema {
     singularName: 'platform';
     pluralName: 'platforms';
     displayName: 'Platform';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -713,6 +710,7 @@ export interface ApiPublisherPublisher extends Struct.CollectionTypeSchema {
     singularName: 'publisher';
     pluralName: 'publishers';
     displayName: 'Publisher';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -744,13 +742,12 @@ export interface ApiRecommendedRecommended extends Struct.SingleTypeSchema {
     singularName: 'recommended';
     pluralName: 'recommendeds';
     displayName: 'Recommended';
-    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    section: Schema.Attribute.Component<'page.section', false> &
+    section: Schema.Attribute.Component<'page.popular-games', false> &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

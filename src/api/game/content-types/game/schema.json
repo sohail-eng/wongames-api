@@ -4,8 +4,7 @@
   "info": {
     "singularName": "game",
     "pluralName": "games",
-    "displayName": "Game",
-    "description": ""
+    "displayName": "Game"
   },
   "options": {
     "draftAndPublish": false
@@ -25,10 +24,18 @@
     "short_description": {
       "type": "text"
     },
+    "description": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
     "price": {
       "type": "decimal",
-      "default": 0,
-      "required": true
+      "required": true,
+      "default": 0
     },
     "release_date": {
       "type": "date"
@@ -42,39 +49,24 @@
         "BR14",
         "BR16",
         "BR18"
-      ],
-      "default": "BR0"
-    },
-    "cover": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
       ]
     },
-    "gallery": {
+    "cover": {
+      "allowedTypes": [
+        "images"
+      ],
       "type": "media",
-      "multiple": true,
-      "required": false,
+      "multiple": false
+    },
+    "gallery": {
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
-    },
-    "platforms": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::platform.platform",
-      "mappedBy": "games"
-    },
-    "publisher": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::publisher.publisher",
-      "inversedBy": "games"
+      ],
+      "type": "media",
+      "multiple": true
     },
     "categories": {
       "type": "relation",
@@ -88,13 +80,17 @@
       "target": "api::developer.developer",
       "mappedBy": "games"
     },
-    "description": {
-      "type": "customField",
-      "options": {
-        "output": "HTML",
-        "preset": "rich"
-      },
-      "customField": "plugin::ckeditor.CKEditor"
+    "platforms": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::platform.platform",
+      "mappedBy": "games"
+    },
+    "publisher": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::publisher.publisher",
+      "inversedBy": "games"
     }
   }
 }

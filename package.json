@@ -1,13 +1,12 @@
 {
   "name": "wongames-api",
-  "version": "2.0.0",
   "private": true,
+  "version": "1.0.0",
   "description": "A Strapi application",
   "scripts": {
     "dev": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "deploy": "strapi deploy",
     "strapi": "strapi"
   },
   "dependencies": {
@@ -31,10 +30,13 @@
     "typescript": "^5"
   },
   "engines": {
-    "node": "20.18.0",
-    "npm": "10.8.2"
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "author": {
+    "name": "Pedro Estevão"
   },
   "strapi": {
-    "uuid": "5bb54f1a-2d16-4fea-a687-4624ad309655"
+    "uuid": "111bc73d-1888-445a-b8eb-cc32bad8ce8b"
   }
 }

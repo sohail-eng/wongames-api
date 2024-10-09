@@ -4,7 +4,8 @@
   "info": {
     "singularName": "platform",
     "pluralName": "platforms",
-    "displayName": "Platform"
+    "displayName": "Platform",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -13,8 +14,8 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "unique": true,
+      "required": true
     },
     "slug": {
       "type": "uid",

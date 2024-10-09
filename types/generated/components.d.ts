@@ -5,7 +5,6 @@ export interface PageSection extends Struct.ComponentSchema {
   info: {
     displayName: 'Section';
     icon: 'apps';
-    description: '';
   };
   attributes: {
     title: Schema.Attribute.String;
@@ -68,7 +67,6 @@ export interface PageButton extends Struct.ComponentSchema {
   info: {
     displayName: 'Button';
     icon: 'link';
-    description: '';
   };
   attributes: {
     label: Schema.Attribute.String &
