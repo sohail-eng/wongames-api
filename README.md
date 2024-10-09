@@ -25,31 +25,23 @@ $ npm install
 Create an `.env` file in the project root, or edit if it already exists, similar to the following structure:
 
 ```bash
-# Server
-HOST=0.0.0.0
-PORT=1337
-
-# Secrets
-APP_URL=tobemodified
-APP_KEYS="toBeModified1,toBeModified2"
-API_TOKEN_SALT=tobemodified
-ADMIN_JWT_SECRET=tobemodified
-TRANSFER_TOKEN_SALT=tobemodified
-
-# GOG API
-GOG_URL=https://www.gog.com
-GOG_API_URL=https://catalog.gog.com/v1/catalog
+HOST = 0.0.0.0 #Host where strapi will start
+PORT = 1337 #Port where strapi will start 
+APP_KEYS = "toBeModified1,toBeModified2"
+API_TOKEN_SALT = tobemodified
+ADMIN_JWT_SECRET = tobemodified
+TRANSFER_TOKEN_SALT = tobemodified
+JWT_SECRET = tobemodified
 
 # Database
-DATABASE_CLIENT=postgres
-DATABASE_HOST=127.0.0.1
-DATABASE_PORT=5432
-DATABASE_NAME=tobemodified
-DATABASE_USERNAME=postgres
-DATABASE_PASSWORD=tobemodified
-DATABASE_SSL=false
-DATABASE_FILENAME=
-JWT_SECRET=tobemodified
+DATABASE_CLIENT = "YOUR_DATABASE_NAME" #Your database name: mysql, postgresql, mariadb (Check the supported databases in the strapi documentation)
+DATABASE_HOST = "YOUR_DATABASE_HOST" 
+DATABASE_PORT = "YOUR_DATABASE_PORT"
+DATABASE_NAME = "YOUR_DATABASE_NAME"
+DATABASE_USERNAME = "YOUR_DATABASE_USER"
+DATABASE_PASSWORD = "YOUR_DATABASE_PASS"
+DATABASE_SSL = "YOUR_DATABASE_SSL"
+JWT_SECRET = "YOUR_DATABASE_JWT_SECRETE"
 ```
 
 ## Commands

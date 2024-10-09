@@ -1,6 +1,6 @@
-import type { Struct, Schema } from '@strapi/strapi';
+import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface PageSection extends Struct.ComponentSchema {
+export interface PageSection extends Schema.Component {
   collectionName: 'components_page_sections';
   info: {
     displayName: 'Section';
@@ -8,30 +8,31 @@ export interface PageSection extends Struct.ComponentSchema {
     description: '';
   };
   attributes: {
-    title: Schema.Attribute.String;
-    highlight: Schema.Attribute.Component<'page.highlight', false>;
+    title: Attribute.String;
+    highlight: Attribute.Component<'page.highlight'>;
   };
 }
 
-export interface PageRibbon extends Struct.ComponentSchema {
+export interface PageRibbon extends Schema.Component {
   collectionName: 'components_page_ribbons';
   info: {
     displayName: 'Ribbon';
     icon: 'stack';
+    description: '';
   };
   attributes: {
-    text: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
+    text: Attribute.String &
+      Attribute.SetMinMaxLength<{
         maxLength: 30;
       }>;
-    color: Schema.Attribute.Enumeration<['primary', 'secondary']> &
-      Schema.Attribute.DefaultTo<'primary'>;
-    size: Schema.Attribute.Enumeration<['small', 'normal']> &
-      Schema.Attribute.DefaultTo<'normal'>;
+    color: Attribute.Enumeration<['primary', 'secondary']> &
+      Attribute.DefaultTo<'primary'>;
+    size: Attribute.Enumeration<['small', 'normal']> &
+      Attribute.DefaultTo<'normal'>;
   };
 }
 
-export interface PagePopularGames extends Struct.ComponentSchema {
+export interface PagePopularGames extends Schema.Component {
   collectionName: 'components_page_popular_games';
   info: {
     displayName: 'PopularGames';
@@ -39,31 +40,36 @@ export interface PagePopularGames extends Struct.ComponentSchema {
     description: '';
   };
   attributes: {
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    highlight: Schema.Attribute.Component<'page.highlight', false>;
-    games: Schema.Attribute.Relation<'oneToMany', 'api::game.game'>;
+    title: Attribute.String & Attribute.Required;
+    highlight: Attribute.Component<'page.highlight'>;
+    games: Attribute.Relation<
+      'page.popular-games',
+      'oneToMany',
+      'api::game.game'
+    >;
   };
 }
 
-export interface PageHighlight extends Struct.ComponentSchema {
+export interface PageHighlight extends Schema.Component {
   collectionName: 'components_page_highlights';
   info: {
     displayName: 'Highlight';
     icon: 'star';
+    description: '';
   };
   attributes: {
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    subTitle: Schema.Attribute.Text & Schema.Attribute.Required;
-    background: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    floatImage: Schema.Attribute.Media<'images'>;
-    buttonLabel: Schema.Attribute.String & Schema.Attribute.Required;
-    buttonLink: Schema.Attribute.String & Schema.Attribute.Required;
-    alignment: Schema.Attribute.Enumeration<['right', 'left']> &
-      Schema.Attribute.DefaultTo<'right'>;
+    title: Attribute.String & Attribute.Required;
+    subTitle: Attribute.Text & Attribute.Required;
+    background: Attribute.Media<'images'> & Attribute.Required;
+    floatImage: Attribute.Media<'images'>;
+    buttonLabel: Attribute.String & Attribute.Required;
+    buttonLink: Attribute.String & Attribute.Required;
+    alignment: Attribute.Enumeration<['right', 'left']> &
+      Attribute.DefaultTo<'right'>;
   };
 }
 
-export interface PageButton extends Struct.ComponentSchema {
+export interface PageButton extends Schema.Component {
   collectionName: 'components_page_buttons';
   info: {
     displayName: 'Button';
@@ -71,16 +77,16 @@ export interface PageButton extends Struct.ComponentSchema {
     description: '';
   };
   attributes: {
-    label: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'Buy now'>;
-    link: Schema.Attribute.String & Schema.Attribute.Required;
+    label: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Buy now'>;
+    link: Attribute.String & Attribute.Required;
   };
 }
 
-declare module '@strapi/strapi' {
-  export module Public {
-    export interface ComponentSchemas {
+declare module '@strapi/types' {
+  export module Shared {
+    export interface Components {
       'page.section': PageSection;
       'page.ribbon': PageRibbon;
       'page.popular-games': PagePopularGames;

@@ -11,6 +11,7 @@
       "type": "string"
     },
     "highlight": {
+      "displayName": "Highlight",
       "type": "component",
       "repeatable": false,
       "component": "page.highlight"

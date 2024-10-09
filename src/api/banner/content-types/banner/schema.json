@@ -36,6 +36,7 @@
       "component": "page.button"
     },
     "ribbon": {
+      "displayName": "Ribbon",
       "type": "component",
       "repeatable": false,
       "component": "page.ribbon"

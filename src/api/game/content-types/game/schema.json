@@ -25,6 +25,14 @@
     "short_description": {
       "type": "text"
     },
+    "description": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
     "price": {
       "type": "decimal",
       "default": 0,
@@ -42,8 +50,7 @@
         "BR14",
         "BR16",
         "BR18"
-      ],
-      "default": "BR0"
+      ]
     },
     "cover": {
       "type": "media",
@@ -64,37 +71,29 @@
         "audios"
       ]
     },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "games"
+    },
     "platforms": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::platform.platform",
-      "mappedBy": "games"
+      "inversedBy": "games"
+    },
+    "developers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::developer.developer",
+      "inversedBy": "games"
     },
     "publisher": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::publisher.publisher",
       "inversedBy": "games"
-    },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::category.category",
-      "mappedBy": "games"
-    },
-    "developers": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::developer.developer",
-      "mappedBy": "games"
-    },
-    "description": {
-      "type": "customField",
-      "options": {
-        "output": "HTML",
-        "preset": "rich"
-      },
-      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }

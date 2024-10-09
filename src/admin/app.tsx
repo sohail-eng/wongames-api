@@ -29,5 +29,5 @@ export default {
 			releases: false,
 		},
 	},
-	bootstrap() {},
+	bootstrap() { },
 };
