@@ -4,8 +4,7 @@
   "info": {
     "singularName": "game",
     "pluralName": "games",
-    "displayName": "Game",
-    "description": ""
+    "displayName": "Game"
   },
   "options": {
     "draftAndPublish": false
@@ -35,8 +34,8 @@
     },
     "price": {
       "type": "decimal",
-      "default": 0,
-      "required": true
+      "required": true,
+      "default": 0
     },
     "release_date": {
       "type": "date"
@@ -53,41 +52,39 @@
       ]
     },
     "cover": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
     },
     "gallery": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": true
     },
     "categories": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::category.category",
-      "inversedBy": "games"
-    },
-    "platforms": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::platform.platform",
-      "inversedBy": "games"
+      "mappedBy": "games"
     },
     "developers": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::developer.developer",
-      "inversedBy": "games"
+      "mappedBy": "games"
+    },
+    "platforms": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::platform.platform",
+      "mappedBy": "games"
     },
     "publisher": {
       "type": "relation",

@@ -2,7 +2,7 @@ import Icon from "./extensions/icon.png";
 import Logo from "./extensions/logo.svg";
 
 export default {
-	config: {
+  config: {
 		auth: {
 			logo: Logo,
 		},
@@ -29,5 +29,5 @@ export default {
 			releases: false,
 		},
 	},
-	bootstrap() { },
+  bootstrap() {},
 };

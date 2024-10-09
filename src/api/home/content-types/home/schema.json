@@ -4,8 +4,7 @@
   "info": {
     "singularName": "home",
     "pluralName": "homes",
-    "displayName": "Home",
-    "description": ""
+    "displayName": "Home"
   },
   "options": {
     "draftAndPublish": true
@@ -13,7 +12,6 @@
   "pluginOptions": {},
   "attributes": {
     "newGames": {
-      "displayName": "Section",
       "type": "component",
       "repeatable": false,
       "component": "page.section"
@@ -29,7 +27,6 @@
       "component": "page.section"
     },
     "popularGames": {
-      "displayName": "PopularGames",
       "type": "component",
       "repeatable": false,
       "component": "page.popular-games"

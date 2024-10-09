@@ -4,8 +4,7 @@
   "info": {
     "singularName": "recommended",
     "pluralName": "recommendeds",
-    "displayName": "Recommended",
-    "description": ""
+    "displayName": "Recommended"
   },
   "options": {
     "draftAndPublish": false

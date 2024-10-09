@@ -73,7 +73,7 @@ async function create(name, entityService) {
             await strapi.service(entityService).create({
                 data: {
                     name,
-                    slug: slugify(name, { strict: true, lower: true}),
+                    slug: slugify(name, { strict: true, lower: true }),
                 },
             });
         }
@@ -115,13 +115,13 @@ async function createManyToManyData(products) {
         ...createCall(publishersSet, publisherService),
         ...createCall(categoriesSet, categoryService),
         ...createCall(platformsSet, platformService),
-	]);
+    ]);
 }
 
 async function setImage({ image, game, field = "cover" }) {
     const { data } = await axios.get(image, { responseType: "arraybuffer" });
     const buffer = Buffer.from(data, "base64");
-    
+
     const FormData = require("form-data");
 
     const formData: any = new FormData();
@@ -185,7 +185,7 @@ async function createGames(products) {
 
                 await setImage({ image: product.coverHorizontal, game });
                 await Promise.all(
-                    product.screenshots.slice(0, 5).map((url) => 
+                    product.screenshots.slice(0, 5).map((url) =>
                         setImage({
                             image: `${url.replace("{formatter}", "product_card_v2_mobile_slider_639")}`,
                             game,
@@ -205,11 +205,11 @@ export default factories.createCoreService(gameService, () => ({
         try {
             const gogApiUrl = `${process.env.GOG_API_URL}?${qs.stringify(params)}`;
             // const gogApiUrl = `${process.env.GOG_API_URL}?limit=48&query=Cyberpunk+2077+Utimate+Edition&order=desc}`;
-			
-			const {
+
+            const {
                 data: { products },
             } = await axios.get(gogApiUrl);
-    
+
             await createManyToManyData(products);
             await createGames(products);
 
