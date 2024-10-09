@@ -139,9 +139,12 @@ async function setImage({ image, game, field = "cover" }) {
     console.info(`Uploading ${field} image: ${game.slug}_${generateRandomId()}.jpg`);
 
     try {
+        const host = strapi.config.get("server.host") || process.env.MY_HEROKU_URL || process.env.APP_URL;
+        const apiUrl = `${host}/api/upload`;
+
         await axios({
             method: "POST",
-            url: `${process.env.APP_URL}/api/upload/`,
+            url: apiUrl,
             data: formData,
             headers: {
                 "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
