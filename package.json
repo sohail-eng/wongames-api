@@ -10,24 +10,24 @@
 		"strapi": "strapi"
 	},
 	"dependencies": {
-		"@ckeditor/strapi-plugin-ckeditor": "^1.0.2",
+		"@ckeditor/strapi-plugin-ckeditor": "^1.1.0",
 		"@strapi/plugin-cloud": "5.7.0",
 		"@strapi/plugin-graphql": "^5.7.0",
 		"@strapi/plugin-users-permissions": "5.7.0",
 		"@strapi/strapi": "5.7.0",
-		"jsdom": "^25.0.1",
+		"jsdom": "^26.0.0",
 		"pg": "8.13.1",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0",
 		"react-router-dom": "^6.28.0",
 		"slugify": "^1.6.6",
-		"styled-components": "^6.0.0"
+		"styled-components": "^6.1.14"
 	},
 	"devDependencies": {
 		"@types/node": "^22.10.1",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",
-		"typescript": "^5.6.2"
+		"typescript": "^5.7.3"
 	},
 	"engines": {
 		"node": "20.x",
