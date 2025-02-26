@@ -6,6 +6,7 @@ import ckeditor from "@ckeditor/strapi-plugin-ckeditor/strapi-admin";
 import strapiCloud from "@strapi/plugin-cloud/strapi-admin";
 import graphql from "@strapi/plugin-graphql/strapi-admin";
 import usersPermissions from "@strapi/plugin-users-permissions/strapi-admin";
+import emailDesigner5 from "strapi-plugin-email-designer-5/strapi-admin";
 import { renderAdmin } from "@strapi/strapi/admin";
 
 import customisations from "../../src/admin/app.tsx";
@@ -18,5 +19,6 @@ renderAdmin(document.getElementById("strapi"), {
     "strapi-cloud": strapiCloud,
     graphql: graphql,
     "users-permissions": usersPermissions,
+    "email-designer-5": emailDesigner5,
   },
 });

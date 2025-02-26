@@ -15,7 +15,9 @@ export default [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'script-src': ["'self'", 'https://cdn.ckeditor.com', "https://wongames-api-uzme.onrender.com"],
+          'script-src': ["'self'", 'https://cdn.ckeditor.com', "https://wongames-api-uzme.onrender.com", "'unsafe-inline'", "editor.unlayer.com"],
+          "frame-src": ["'self'", "editor.unlayer.com"],
+          upgradeInsecureRequests: null,
         },
       },
     },
