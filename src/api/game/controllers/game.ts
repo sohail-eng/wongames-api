@@ -16,7 +16,7 @@ export default factories.createCoreController(
 
             await strapi.service("api::game.game").populate(options);
 
-            ctx.send("Finished populating games!");
+            ctx.send("Finished populating games!"); 
         },
     })
 );
