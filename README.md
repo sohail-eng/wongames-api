@@ -38,15 +38,6 @@ This project uses **PostgreSQL** as the database and can be run locally or via *
 
 ➡️ **Client Repository (e-commerce frontend):** [WonGames Client](https://github.com/Pedro-Estevao/wongames-client)
 
-## 👾 Try the Demo!
-
-Curious to see it in action? Experience the full potential of our project by testing the live demo!
-
-🔗 [Try the Demo Now](https://wongames-api-2801443db7ef.herokuapp.com/)
-
-- `User`: alighiericontato@gmail.com
-- `Password`: Convidado132@
-
 ## 🚀 Requirements
 
 To run the API, you need to have **PostgreSQL** installed or use a **Docker** container. The database configuration can be found in the `config/database.ts`.
