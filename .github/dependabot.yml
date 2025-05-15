@@ -9,3 +9,11 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
+	ignore:
+      - dependency-name: "@types/react-dom"
+      - dependency-name: "react-dom"
+      - dependency-name: "@strapi/plugin-cloud"
+      - dependency-name: "@strapi/strapi"
+      - dependency-name: "react-router-dom"
+      - dependency-name: "jsdom"
+      - dependency-name: "@strapi/provider-email-nodemailer"
