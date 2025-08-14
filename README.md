@@ -2,9 +2,9 @@
 
 <br/>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pedro-Estevao/boilerplate-nextjs/master/public/img/logo.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Pedro-Estevao/boilerplate-nextjs/master/public/img/logo-gh.svg">
-  <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://raw.githubusercontent.com/Pedro-Estevao/boilerplate-nextjs/master/public/img/logo.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pedroestevaodev/boilerplate-nextjs/master/public/img/logo.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/pedroestevaodev/boilerplate-nextjs/master/public/img/logo-gh.svg">
+  <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://raw.githubusercontent.com/pedroestevaodev/boilerplate-nextjs/master/public/img/logo.svg">
 </picture>
 
 <br/>
@@ -36,16 +36,16 @@ This project uses **PostgreSQL** as the database and can be run locally or via *
   </a>
 </p>
 
-➡️ **Client Repository (e-commerce frontend):** [WonGames Client](https://github.com/Pedro-Estevao/wongames-client)
+➡️ **Client Repository (e-commerce frontend):** [WonGames Client](https://github.com/pedroestevaodev/wongames-client)
 
 ## 👾 Try the Demo!
 
 Curious to see it in action? Experience the full potential of our project by testing the live demo!
 
-🔗 [Try the Demo Now](https://wongames-api-2801443db7ef.herokuapp.com/)
+🔗 [Try the Demo Now](https://wongames-api-94d488d06464.herokuapp.com/)
 
-- `User`: alighiericontato@gmail.com
-- `Password`: Convidado132@
+- `User`: projetospedroestevao@gmail.com
+- `Password`: Convidado321@
 
 ## 🚀 Requirements
 
